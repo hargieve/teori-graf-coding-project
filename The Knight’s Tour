@@ -1,0 +1,38 @@
+def is_valid(x, y, board, n):
+    return 0 <= x < n and 0 <= y < n and board[x][y] == -1
+
+def print_solution(board):
+    for row in board:
+        print(row)
+
+def knight_tour(n, start_x, start_y):
+    moves_x = [2, 1, -1, -2, -2, -1, 1, 2]
+    moves_y = [1, 2, 2, 1, -1, -2, -2, -1]
+    board = [[-1 for _ in range(n)] for _ in range(n)]
+
+    board[start_x][start_y] = 0
+    path = [(start_x, start_y)]
+
+    def solve(x, y, move_i):
+        if move_i == n*n:
+            return True
+
+        for k in range(8):
+            next_x = x + moves_x[k]
+            next_y = y + moves_y[k]
+            if is_valid(next_x, next_y, board, n):
+                board[next_x][next_y] = move_i
+                path.append((next_x, next_y))
+                if solve(next_x, next_y, move_i + 1):
+                    return True
+                board[next_x][next_y] = -1
+                path.pop()
+        return False
+
+    if solve(start_x, start_y, 1):
+        for p in path:
+            print(p[0], p[1])
+    else:
+        print("No solution exists")
+
+knight_tour(5, 2, 2)
