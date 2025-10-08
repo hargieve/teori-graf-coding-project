@@ -1,7 +1,6 @@
 import itertools
 
 def tsp(n, edges, start):
-    # Build adjacency matrix
     INF = float('inf')
     graph = [[INF] * n for _ in range(n)]
     for _, u, v, w in edges:
@@ -26,8 +25,6 @@ def tsp(n, edges, start):
     print("Cost:", min_cost)
     print("Route:", ", ".join(map(str, min_path)))
 
-
-# Example input
 n = 3
 e = 4
 edges = [
