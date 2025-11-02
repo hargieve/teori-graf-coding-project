@@ -15,7 +15,6 @@ void printSolution(int board[N][N]) {
     }
 }
 
-// Function to check if move is valid
 int isSafe(int x, int y, int board[N][N]) {
     return (x >= 0 && x < N && y >= 0 && y < N && board[x][y] == -1);
 }
