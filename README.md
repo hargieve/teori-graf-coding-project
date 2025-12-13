@@ -1,54 +1,66 @@
-# ♞ Knight’s Tour 
+# 🐴 Knight’s Tour Problem (C++)
 
-This project implements the **Knight’s Tour Problem** using the **Backtracking Algorithm** in the C programming language.  
-The Knight’s Tour is a classic problem in chess and computer science where a knight must visit every square on the chessboard **exactly once**.
-
----
-
-## 📘 Problem Description
-
-The **Knight’s Tour** asks:  
-> “Can a knight move around an N×N chessboard such that it visits every square exactly once?”
-
-A **solution** exists if the knight can make a sequence of moves that covers all squares without repeating any.
-
-There are two types of tours:
-- **Open tour** – the knight ends on a square different from the starting point.  
-- **Closed tour** – the knight ends one knight’s move away from the starting point.
-
-This program focuses on finding **one valid tour (open)** using backtracking.
+Program ini merupakan implementasi penyelesaian **Knight’s Tour Problem** menggunakan bahasa **C++** dengan pendekatan **Backtracking (rekursif)**. Program akan mencari jalur pergerakan bidak kuda pada papan catur berukuran **N × N** sehingga setiap kotak dikunjungi **tepat satu kali**.
 
 ---
 
-## 🧠 Algorithm Used — Backtracking
-
-The algorithm explores all possible moves step by step:
-
-1. Place the knight on the starting square.
-2. Mark the current square as visited.
-3. Try all possible knight moves from the current square.
-4. If a move leads to a dead-end (no unvisited squares left), **backtrack**.
-5. Continue until all squares have been visited.
-
-If all `N × N` squares are visited successfully, a solution is found.
+## 📌 Deskripsi
+Knight’s Tour adalah masalah klasik dalam ilmu komputer dan matematika diskrit. Dalam program ini, pengguna dapat menentukan **posisi awal kuda**, kemudian program akan menghitung dan menampilkan urutan langkah kuda hingga seluruh papan catur terjelajahi.
 
 ---
 
-## 🧩 Features
-
-- Solves the **Knight’s Tour** using **recursive backtracking**.  
-- User can input any **starting position** on the chessboard.  
-- Displays the **full path** of the knight with move numbers.  
-- Works on a standard **8×8 board** (can be resized by changing `#define N 8`).
+## ⚙️ Fitur
+- Ukuran papan dapat diubah melalui konstanta `N`
+- Posisi awal kuda ditentukan oleh pengguna
+- Menggunakan algoritma **Backtracking**
+- Menampilkan urutan langkah kuda dalam bentuk matriks
+- Menangani kasus tidak adanya solusi
 
 ---
 
-## 🧾 Input and Output
+## 🛠️ Teknologi
+- Bahasa: **C++**
+- Compiler: `g++` / Dev-C++
+- Library: `<iostream>`, `<iomanip>`
 
-### 🖥️ Input Format
-- Two integers representing the **starting position** (row and column).
-- Row and column are **0-indexed** (range: 0–7 for an 8×8 board).
+---
 
-### 📤 Output Format
-- The program prints the chessboard grid where each cell shows the **move number** (starting from 0).
-- If no tour exists, it prints:
+## 📥 Input
+Pengguna memasukkan dua bilangan bulat:
+
+x y
+
+markdown
+Copy code
+
+Keterangan:
+- `x` = baris awal kuda
+- `y` = kolom awal kuda
+- Nilai `x` dan `y` harus berada pada rentang `0` sampai `N-1`
+
+Contoh:
+0 0
+
+yaml
+Copy code
+
+---
+
+## 📤 Output
+- Jika solusi ditemukan, program akan menampilkan papan catur berukuran `N × N` yang berisi angka:
+  - `0` → posisi awal kuda
+  - Angka berikutnya → urutan langkah kuda
+- Jika solusi tidak ditemukan:
+No solution exists.
+
+lua
+Copy code
+
+Contoh output:
+0 59 38 33 30 17 8 63
+37 34 31 60 9 62 29 16
+58 1 36 39 32 27 18 7
+...
+
+yaml
+Copy code
