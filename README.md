@@ -41,9 +41,6 @@ Keterangan:
 Contoh:
 0 0
 
-yaml
-Copy code
-
 ---
 
 ## 📤 Output
@@ -52,15 +49,3 @@ Copy code
   - Angka berikutnya → urutan langkah kuda
 - Jika solusi tidak ditemukan:
 No solution exists.
-
-lua
-Copy code
-
-Contoh output:
-0 59 38 33 30 17 8 63
-37 34 31 60 9 62 29 16
-58 1 36 39 32 27 18 7
-...
-
-yaml
-Copy code
